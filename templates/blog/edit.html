@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+{{ form.media }}
+    <form action="" method="POST">
+        {% csrf_token  %}
+        {{ form.as_p }}
+    <input class="btn btn-success" type="submit"  value="Сохранить" >
+    </form>
+{% endblock %}
+

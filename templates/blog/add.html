@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Новая заметка
+{% endblock %}
+
+{% block content %}
+
+    <h2 style="margin-bottom: 30px">Новая заметка</h2>
+
+    {{ form.media }}
+    <form action="" method="POST">
+        {% csrf_token  %}
+        <p>Название : {{ form.title }}</p>
+        <p>Превью : {{ form.preview }}</p>
+        <p>Текст : {{ form.text }}</p>
+        <p>Участники : {{ form.members }}</p>
+        <p>Теги : {{ form.tags }}</p>
+        <p>Статус задачи : {{ form.status }}</p>
+        <input class="btn btn-success"  type="submit" value="Сохранить" />
+    </form>
+
+{% endblock %}

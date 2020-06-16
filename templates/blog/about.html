@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% block title %}
+Люди
+{% endblock %}
+{% block content %}
+<div class="row">
+<h2> Люди: </h2>
+{% for users in users %}
+<h3>
+     {{users.username}}
+</h3>
+    <a href="{% url 'change_friends' operation='add' pk=users.pk %}">
+        <button type="button" class="btn btn-success">Добавить в друзья</button>
+    </a>
+{% endfor %}
+</div>
+{% endblock %}
